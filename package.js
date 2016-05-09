@@ -11,11 +11,13 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.3.2.4');
-  api.use('ecmascript');
-  api.mainModule('accounts-wo.js');
+  //api.versionsFrom('1.3.2.4');
+  //api.use('ecmascript');
+  //api.mainModule('wo.js');
   
   api.use('accounts-base', ['client', 'server']);
+  
+  //Export Accounts(etc) to packages using this one.
   api.imply('accounts-base', ['client', 'server']);
 
   api.use('accounts-oauth', ['client','server']);
