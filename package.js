@@ -11,26 +11,26 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.3.2.4');
-  api.use('ecmascript');
-  api.mainModule('accounts-wo.js');
+ // api.versionsFrom('1.2.1');
+  api.use('ecmascript@0.1.6');
+  //api.mainModule('accounts-wo.js');
   
-  api.use('accounts-base', ['client', 'server']);
+  api.use('accounts-base@1.2.1', ['client', 'server']);
   
   //Export Accounts(etc) to packages using this one.
   api.imply('accounts-base', ['client', 'server']);
 
-  api.use('accounts-oauth', ['client','server']);
-  api.use('devasena:wooidc', ['client','server']);
+  api.use('accounts-oauth@1.1.7', ['client','server']);
+  api.use('devasena:wooidc@0.0.1', ['client','server']);
 
   api.addFiles('wo_login_button.css','client');
   api.addFiles('wo.js')
   
 });
 
-Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('devasena:accounts-wo');
-  api.mainModule('accounts-wo-tests.js');
-});
+//Package.onTest(function(api) {
+//  api.use('ecmascript');
+//  api.use('tinytest');
+//  api.use('devasena:accounts-wo');
+//  api.mainModule('accounts-wo-tests.js');
+//});
