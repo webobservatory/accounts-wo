@@ -1,2 +1,2 @@
 # accounts-wo
-Meteor package source code for providing Login service to southampton web observatory accounts 
+Meteor package source code providing login service for southampton web observatory accounts (OpenID Connect) 
