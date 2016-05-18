@@ -1,6 +1,6 @@
 Package.describe({
   name: 'devasena:accounts-wo',
-  version: '0.0.13',
+  version: '0.0.15',
   // Brief, one-line summary of the package.
   summary: 'Login service for Southampton web observatory accounts',
   // URL to the Git repository containing the source code for this package.
@@ -15,7 +15,7 @@ Package.onUse(function(api) {
   //Export Accounts(etc) to packages using this one.
   api.imply('accounts-base', ['client', 'server']);
   api.use('accounts-oauth@1.1.7', ['client','server']);
-  api.use('devasena:wooidc@0.0.7', ['client','server']);
+  api.use('devasena:wooidc@0.0.9', ['client','server']);
 
   api.addFiles('wo_login_button.css','client');
   api.addFiles('wo.js')
