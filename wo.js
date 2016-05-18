@@ -15,6 +15,6 @@ if (Meteor.isClient) {
 else {
     Accounts.addAutopublishFields({
         forLoggedInUser: ['services.wooidc'],
-        forOtherUsers: ['services.wooidc.id']
+        forOtherUsers: ['services.wooidc.username']
     });
 }
