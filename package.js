@@ -1,6 +1,6 @@
 Package.describe({
   name: 'devasena:accounts-wo',
-  version: '0.0.4',
+  version: '0.0.10',
   // Brief, one-line summary of the package.
   summary: 'Login service for Southampton web observatory accounts',
   // URL to the Git repository containing the source code for this package.
@@ -13,7 +13,6 @@ Package.describe({
 Package.onUse(function(api) {
  // api.versionsFrom('1.2.1');
   api.use('ecmascript@0.1.6');
-  //api.mainModule('accounts-wo.js');
   
   api.use('accounts-base@1.2.1', ['client', 'server']);
   
