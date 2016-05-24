@@ -12,11 +12,11 @@ Package.describe({
 
 Package.onUse(function(api) {
 
-  api.use(['underscore', 'random']);
-  api.use('accounts-base', ['client', 'server']);
+  api.use(['underscore', 'random','templating'],'client');
+  api.use(['accounts-base','aldeed:template-extension'], ['client', 'server']);
 
   //Export Accounts(etc) to packages using this one.
-  api.imply('accounts-base', ['client', 'server']);
+  api.imply(['accounts-base','aldeed:template-extension@4.0.0'], ['client', 'server']);
 
   //Allow us to call Accounts.oauth.serviceNames, if there are any OAuth
   // services.
@@ -25,7 +25,7 @@ Package.onUse(function(api) {
   //Using Web Observatory core OpenID Connect implementation
   api.use('devasena:wooidc', ['client','server']);
 
-  api.addFiles('wooidc_login_button.css','client');
+  api.addFiles(['wooidc_login_button.css','wo_at_social.html','wo_at_social.js'],'client');
   api.addFiles('wooidc.js')
 
 });
