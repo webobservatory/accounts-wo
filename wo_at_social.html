@@ -1,12 +1,21 @@
 <template name="woatSocial">
- <!-- {{#if isWooidcp}}--> 
-    <button class="btn at-social-btn {{disabled}} dropdown-toggle" id="at-{{name}}" name={{name}} data-toggle="dropdown">
-       {{buttonText}} <span class="caret"></span>
-          <i class="{{iconclass}}"></i>
+ 
+   {{#if equals name "wooidc"}} 
+   <div class="dropdown">
+   <button class="btn at-social-btn {{disabled}} dropdown-toggle" id="at-{{name}}" name={{name}} data-toggle="dropdown">
+          <i class="{{iconClass}}"></i>SIGN IN WITH WOs &nbsp; <span class="caret"></span>
     </button>
-  <!--{{else}}-->
-  <!--  <button class="btn at-social-btn {{disabled}}" id="at-{{name}}" name="{{name}}">-->
-      <!--<i class="{{iconclass}}"></i> {{buttonText}}-->
-    <!--/button-->
-  <!--{{/if}}-->
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">SOTON</a></li>
+    <li><a href="#">NUS Singapore</a></li>
+    <li><a href="#">UNISA</a></li>
+  </ul>
+  </div>
+   {{else}}
+   <div>
+     <button class="btn at-social-btn {{disabled}}" id="at-{{name}}" name="{{name}}">
+          <i class="{{iconClass}}"></i> {{buttonText}}
+    </button>
+   </div>
+   {{/if}}
 </template>
