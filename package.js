@@ -1,10 +1,10 @@
 Package.describe({
-  name: 'devasena:accounts-wo',
-  version: '0.0.16',
+  name: 'webobservatory:accounts-wo',
+  version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: 'Login service for Southampton web observatory accounts',
   // URL to the Git repository containing the source code for this package.
-  git: 'https://github.com/Southampton-RSG/accounts-wo',
+  git: 'https://github.com/webobservatory/accounts-wo',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
@@ -23,7 +23,7 @@ Package.onUse(function(api) {
   api.use('accounts-oauth', ['client','server']);
 
   //Using Web Observatory core OpenID Connect implementation
-  api.use('devasena:wooidc', ['client','server']);
+  api.use('webobservatory:wooidc', ['client','server']);
 
   api.addFiles(['wooidc_login_button.css','wo_at_social.html','wo_at_social.js'],'client');
   api.addFiles('wooidc.js')
@@ -33,6 +33,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('devasena:accounts-wo');
+  api.use('webobservatory:accounts-wo');
   api.mainModule('accounts-wo-tests.js');
 });
