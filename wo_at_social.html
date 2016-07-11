@@ -1,3 +1,4 @@
+<!-- Main Web observatory login template. -->
 
 <template name="woatSocial">
 
@@ -11,9 +12,7 @@
 
       <div class="dropdown-menu pull-right">
          <ul role="menu" aria-labelledby="dlabel">
-            <!--{{#each woNodes}}-->
-              <li><a href="#"> {{#each woNodes}} {{node}} {{/each}} </a></li>    
-            <!--{{/each}}-->    
+           {{> woNodeItems}}    
          </ul>
       </div>
 
@@ -30,6 +29,16 @@
 
 {{/if}}
 
+
+</template>
+
+<!--Template for dynamically populating configured web observatory nodes as dropdown menu items. -->
+
+<template name="woNodeItems">
+
+  {{#each node in woNodes}}
+     <li role="menuItem"><a href="#">{{node.domain}}</a></li>
+  {{/each}}
 
 </template>
 

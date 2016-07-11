@@ -45,20 +45,17 @@ Template.registerHelper('woNodes', function() {
     
     var configArray = schemaloginservice.config;
 
-    return configArray.forEach(function (doc) {
+    /*return configArray.forEach(function (doc) {
        console.log(doc.domain);
        nodeArray.push(doc.domain);
        console.log(nodeArray);
        return nodeArray;
-    });
+    });*/
+
+    console.log(configArray);
+    return configArray;
 
 }); 
-
-Template.registerHelper('node', function() {
-   
-    $('.dropdown-menu.pull-right').dropdown();
-
-});
 
 //Meteor woatSocial template events
 Template.woatSocial.events({
