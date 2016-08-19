@@ -12,18 +12,19 @@ Package.describe({
 
 Package.onUse(function(api) {
 
+  api.versionsFrom("METEOR@0.9.0")
   api.use(['underscore', 'random','templating'],'client');
-  api.use(['accounts-base','aldeed:template-extension','useraccounts:core','useraccounts:iron-routing'], ['client', 'server']);
+  api.use(['accounts-base','aldeed:template-extension','useraccounts:core@1.14.2','useraccounts:iron-routing@1.14.2'], ['client', 'server']);
 
   //Export Accounts(etc) to packages using this one.
-  api.imply(['accounts-base','aldeed:template-extension@4.0.0','useraccounts:core','useraccounts:iron-routing'], ['client', 'server']);
+  api.imply(['accounts-base','aldeed:template-extension@4.0.0','useraccounts:core@1.14.2','useraccounts:iron-routing@1.14.2'], ['client', 'server']);
 
   //Allow us to call Accounts.oauth.serviceNames, if there are any OAuth
   // services.
   api.use('accounts-oauth', ['client','server']);
 
   //Using Web Observatory core OpenID Connect implementation
-  api.use('webobservatory:wooidc', ['client','server']);
+  api.use('webobservatory:wooidc@0.0.2', ['client','server']);
 
   api.addFiles(['wooidc_login_button.css','wo_at_social.html','wo_at_social.js'],'client');
   api.addFiles('wooidc.js')
