@@ -1,6 +1,6 @@
 Package.describe({
   name: 'webobservatory:accounts-wo',
-  version: '0.0.4',
+  version: '0.0.5',
   // Brief, one-line summary of the package.
   summary: 'Login service for Southampton web observatory accounts',
   // URL to the Git repository containing the source code for this package.
@@ -20,7 +20,7 @@ Package.onUse(function(api) {
   api.imply(['accounts-base','aldeed:template-extension@4.0.0','useraccounts:core@1.14.2','useraccounts:iron-routing@1.14.2'], ['client', 'server']);
 
   //Allow us to call Accounts.oauth.serviceNames, if there are any OAuth
-  // services.
+  // services and activate template body events if any present.
   api.use(['accounts-oauth','gwendall:body-events@0.1.6'], ['client','server']);
 
   //Using Web Observatory core OpenID Connect implementation

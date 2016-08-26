@@ -13,7 +13,6 @@ Template.registerHelper('morethanone', function(n, one) {
   return n > one;
 });
 
-
 //Global helper to be used to compare service name and number of configured nodes for web observatory
 Template.registerHelper('wooidcconfig', function() {
 
@@ -39,12 +38,13 @@ Template.registerHelper('wooidcconfig', function() {
         return true;
      }
      else{
-        console.log("Using button's default click functionality");
+        console.log("Using button's default click functionality.");
         return false;
         }
  }
- else
+/* else{
      return false;
+ }*/
 });
 
 //All the configured WO nodes are stored in this array with their respective clientIDs and secret keys for application.
@@ -80,7 +80,7 @@ Template.registerHelper('woNodes', function() {
 
        console.log("Button text is: ", event.currentTarget.innerText);
        if ( (this.id === "at-wooidc") ){
-            if (event.currentTarget.innerText === "CONFIGURE WOOIDC")
+            if (event.currentTarget.innerText === "CONFIGURE WO NODE")
             {
               event.preventDefault();
 
