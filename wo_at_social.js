@@ -144,13 +144,13 @@ Template.registerHelper('woNodes', function() {
             });
 
             }
-            else
+
+       } 
+        else
             {
               event.preventDefault();
               console.log("WOOIDC button clicked.")
             }
-
-       } 
 
      },
 

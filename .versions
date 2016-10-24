@@ -39,7 +39,7 @@ iron:middleware-stack@1.0.11
 iron:router@1.0.12
 iron:url@1.0.11
 jquery@1.11.8
-local-test:webobservatory:accounts-wo@0.0.4
+local-test:webobservatory:accounts-wo@0.0.5
 localstorage@1.0.9
 logging@1.0.12
 meteor@1.1.14
@@ -77,5 +77,5 @@ useraccounts:core@1.14.2
 useraccounts:iron-routing@1.14.2
 webapp@1.2.8
 webapp-hashing@1.0.9
-webobservatory:accounts-wo@0.0.4
-webobservatory:wooidc@0.0.3
+webobservatory:accounts-wo@0.0.5
+webobservatory:wooidc@0.0.4
