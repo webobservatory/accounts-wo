@@ -1,6 +1,6 @@
 Package.describe({
   name: 'webobservatory:accounts-wo',
-  version: '0.0.7',
+  version: '0.0.8',
   // Brief, one-line summary of the package.
   summary: 'Login service for Southampton web observatory accounts',
   // URL to the Git repository containing the source code for this package.

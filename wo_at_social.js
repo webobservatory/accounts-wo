@@ -33,8 +33,6 @@ Template.registerHelper('wooidcconfig', function() {
  if ( (this._id === "wooidc") ){
      if ( (configLength >= 1) )
      {
-        //Removing all the event handlers if the Oauth service is Web observatory and if its configured with one or more than one WO nodes.
-        Template.atSocial.clearEventMaps();
         return true;
      }
      else{
@@ -42,9 +40,9 @@ Template.registerHelper('wooidcconfig', function() {
         return false;
         }
  }
-/* else{
+ else{
      return false;
- }*/
+ }
 });
 
 //All the configured WO nodes are stored in this array with their respective clientIDs and secret keys for application.
@@ -75,10 +73,12 @@ Template.registerHelper('woNodes', function() {
 
   Template.body.events({
 
-     //WOOIDC button click event.
-    'click button': function(event, t) {
+    //WOOIDC button click event.
+    'click #at-wooidc':function(event, t) {
 
        console.log("Button text is: ", event.currentTarget.innerText);
+       console.log("Button ID: ",this.id);
+
        if ( (this.id === "at-wooidc") ){
             if (event.currentTarget.innerText === "CONFIGURE WO NODE")
             {
@@ -95,6 +95,9 @@ Template.registerHelper('woNodes', function() {
               //Main action once the button is clicked.
               event.currentTarget.blur();
 
+              /*if (AccountsTemplates.disabled())
+                  return;*/
+
               var serviceName = "wooidc";            
               var methodName;
               //var parentData = Template.parentData();
@@ -105,10 +108,10 @@ Template.registerHelper('woNodes', function() {
               console.log(state);
 
              //capitalize function
-            var capitalize = function(str) {
-               str = str == null ? '' : String(str);
-               return str.charAt(0).toUpperCase() + str.slice(1);
-            }; 
+             var capitalize = function(str) {
+                str = str == null ? '' : String(str);
+                return str.charAt(0).toUpperCase() + str.slice(1);
+             }; 
 
             if (serviceName === 'meteor-developer')
                  methodName = "loginWithMeteorDeveloperAccount";
@@ -144,13 +147,18 @@ Template.registerHelper('woNodes', function() {
             });
 
             }
+            else
+            {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  console.log("WOOIDC button clicked.");
+            }
 
        } 
-        else
-            {
-              event.preventDefault();
-              console.log("WOOIDC button clicked.")
-            }
+       else
+       {
+           console.log("Not a web observatory node button.");
+       }
 
      },
 
