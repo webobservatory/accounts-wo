@@ -64,7 +64,7 @@ Template.registerHelper('woNodes', function() {
        return nodeArray;
     });*/
 
-    console.log(configArray);
+    //console.log(configArray);
     return configArray;
 
 }); 
